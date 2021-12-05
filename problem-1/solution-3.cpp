@@ -8,19 +8,30 @@ void display_output_list(int n, int O[]) {
 }
 
 void solve(int n, int I[]) {
-    int O[n] = {1}, product = 1, left = 1, right = 1;
+    // Initializing the list elements with 0
+    // This approach works if all the elements of input list are non-zero
+    int O[n] = {0};
+    int left = 1, right = 1, i = 1, j = n - 2;
 
     // Logic
-    for (int i = 0; i < n; i++) {
-        if (i > 0) {
-            left *= I[i-1];
-            O[i] *= left;
-        } 
-        if (n-i < n) {
-            right *= I[n-i];
-            O[i] *= right;
+    while (i < n && j >= 0) {
+        // Purpose is to set the output list to 1 initially
+        if (O[i] == 0) {
+          O[i] = 1;
         }
+        if (O[j] == 0) {
+          O[j] = 1;
+        }
+      
+        left *= I[i-1];
+        O[i] *= left;
+        i++;
+
+        right *= I[j+1];
+        O[j] *= right;
+        j--;
     }
+    
 
     display_output_list(n, O);
 }
