@@ -6,4 +6,4 @@ as output (basically, every element in the list should be the “product of rest
 
 
 
-Problem explained here in one of my newsletter -> https://coderamen.substack.com/p/improve-your-problem-solving-skills
+Problem explained here in one of my newsletter posts -> https://engineersjournal.substack.com/p/what-led-me-to-start-coding
